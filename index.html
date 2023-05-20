@@ -21,6 +21,10 @@
     />
 
     <!-- Custom File Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Movie App</title>
   </head>
@@ -28,7 +32,7 @@
   <body>
     <!-- Navbar section -->
     <header class="header_wrapper">
-      <nav class="navbar navbar-expand-lg fixed-top">
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="#">MovieWatch</a>
           <button
@@ -52,7 +56,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
+                <a class="nav-link active" aria-current="page" href="#movies"
                   >Movies</a
                 >
               </li>
@@ -80,151 +84,16 @@
       </nav>
     </header>
 
-    <!-- Hero-section -->
-    <section class="home-section" id="home">
+    <!-- Home-section -->
+
+    <section class="home-section">
       <div
         id="carouselExampleCaptions"
         class="carousel slide"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="3"
-            aria-label="Slide 4"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="4"
-            aria-label="Slide 5"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="5"
-            aria-label="Slide 6"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="6"
-            aria-label="Slide 7"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="7"
-            aria-label="Slide 8"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="8"
-            aria-label="Slide 9"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="9"
-            aria-label="Slide 10"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="10"
-            aria-label="Slide 11"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="11"
-            aria-label="Slide 12"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="12"
-            aria-label="Slide 13"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="13"
-            aria-label="Slide 14"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="14"
-            aria-label="Slide 15"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="15"
-            aria-label="Slide 16"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="16"
-            aria-label="Slide 17"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="17"
-            aria-label="Slide 18"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="18"
-            aria-label="Slide 19"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="19"
-            aria-label="Slide 20"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="image/avg.jpg"
-              class="d-block w-100 img-fluid"
-              alt="..."
-            />
-            <div class="carousel-caption">
-              <h2>${element.original_title}</h2>
-              <p>${element.overview}</p>
-            </div>
-          </div>
-        </div>
-
+        <div class="carousel-indicators d-flex flex-wrap"></div>
+        <div class="carousel-inner"></div>
         <button
           class="carousel-control-prev"
           type="button"
@@ -247,11 +116,11 @@
     </section>
 
     <!-- Movies-Section -->
-    <section class="latest-movie">
+    <section class="latest-movie" id="movies">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 movies-category">
-            <h2>Latest</h2>
+            <h3>Latest</h3>
             <p class="underline"></p>
           </div>
         </div>
@@ -263,13 +132,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 movies-category">
-            <h2>Upcoming</h2>
+            <h3>Upcoming</h3>
             <p class="underline"></p>
           </div>
         </div>
         <div class="row" id="upcoming-movies"></div>
       </div>
     </section>
+
+    <p>sirajasndans</p>
+    <span>asjdasjnd</span>
   </body>
   <!-- Bootstrap 5 JS CDN links -->
   <script
@@ -285,4 +157,5 @@
 
   <!-- Custom js link -->
   <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </html>

@@ -101,8 +101,8 @@ h1 {
 
 h2 {
   font-family: var(--primary-font);
-  font-size: 4rem;
-  font-weight: 500;
+  font-size: 5rem;
+  font-weight: 900;
   line-height: 5.5rem;
   margin-bottom: 2.5rem;
   color: var(--text-heading);
@@ -114,6 +114,7 @@ h3 {
   line-height: 5rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  color: var(--text-white);
 }
 h5 {
   font-size: 2rem;
@@ -130,13 +131,7 @@ p {
 }
 
 /* Navbar- section */
-.header_wrapper {
-  min-height: 100vh;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+
 .header_wrapper .navbar-brand {
   font-size: 2.5rem;
   color: var(--text-light);
@@ -166,9 +161,7 @@ p {
   padding: 0 0;
   position: relative;
 }
-
-.home-section::before {
-  content: "";
+.overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -176,10 +169,18 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
-.home-section .carousel-caption {
+
+.carousel-item {
+  height: 50rem;
+}
+.carousel-item img {
+  object-fit: cover;
+  object-position: contain;
+}
+
+.carousel-caption {
   text-align: left;
   top: 40%;
 }
@@ -206,10 +207,6 @@ p {
 }
 .card-title:hover {
   text-decoration: underline;
-}
-
-.carousel-item {
-  height: 60rem;
 }
 
 /*Responsive Design*/
